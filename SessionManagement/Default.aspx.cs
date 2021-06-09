@@ -18,13 +18,14 @@ namespace SessionManagement
 		{
 			if (txtUser.Text=="bgates" && txtPassword.Text=="billions")
 			{
-				
+				Session["LoggedIn"] = true;
 				string user = txtUser.Text;
 				string pass = txtPassword.Text;
 				Response.Redirect("WebForm1.aspx?u=" + txtUser.Text + "&p=" + txtPassword.Text);
 			}
 			else if (txtUser.Text == "rsawnson" && txtPassword.Text == "bacon")
 				{
+					Session["LoggedIn"] = true;
 					string user = txtUser.Text;
 					string pass = txtPassword.Text;
 					Response.Redirect("WebForm1.aspx?u=" + txtUser.Text+ "&p=" + txtPassword.Text);

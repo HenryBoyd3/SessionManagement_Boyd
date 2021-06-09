@@ -11,12 +11,17 @@ namespace SessionManagement
 	{
 		string user;
 		string pass;
+		
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			user = Request.QueryString["u"];
 			pass = Request.QueryString["p"];
-
-			lblUser.Text = "Hello, " + user + "! Your password is " + pass;
+			if (user == "bgates" || user == "rsawnson")
+			{
+				lblUser.Text = "Hello, " + user + "! Your password is " + pass;
+			}
+			else 
+			{ lblUser.Text = "no user log in"; }
 		}
 		protected void btnLogIn_Click(object sender, EventArgs e)
 		{

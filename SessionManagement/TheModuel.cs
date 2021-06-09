@@ -48,13 +48,11 @@ namespace SessionManagement
 					URL = "MembersMain.aspx";
 				}
 				//putting the encrypted string into url 
+
 				context.RewritePath(URL, string.Empty, "u=" + eUser + "&p=" + ePass, true);
 				//this is to check if the web page has changed or and the browser url
 				if (vdt.ContainsKey(user) && vdt.ContainsValue(user))
 				{
-					context.Response.Write(vdt[user]);
-					context.Response.Write(vdt[eUser]);
-
 					context.RewritePath(URL, string.Empty, "u=" + vdt[user] + "&p=" + vdt[pass], true);
 				}
 				//this is the basic change that will change the url to the encrypted value
