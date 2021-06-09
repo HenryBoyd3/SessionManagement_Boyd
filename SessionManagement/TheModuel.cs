@@ -46,9 +46,11 @@ namespace SessionManagement
 				if (URL.Contains("WebForm1") && vdt.Count > 4)
 				{
 					URL = "MembersMain.aspx";
+					
 				}
 				//putting the encrypted string into url 
-
+				if (vdt.Count > 8)
+				{ vdt.Clear(); }
 				context.RewritePath(URL, string.Empty, "u=" + eUser + "&p=" + ePass, true);
 				//this is to check if the web page has changed or and the browser url
 				if (vdt.ContainsKey(user) && vdt.ContainsValue(user))
@@ -61,6 +63,7 @@ namespace SessionManagement
 					context.Response.Redirect(context.Request.Url.ToString());
 				}
 			}
+
 
 		}
 
